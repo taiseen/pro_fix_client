@@ -18,12 +18,12 @@ const Header = () => {
 
             <nav className="homeNavigation">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><Link to='/home'>Home</Link></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><Link to="/admin/orderList">Admin</Link></li>
-                    <li><Link to="/login" class="active">Login</Link></li>
+                    <li><Link to='/admin/orderList'>Admin</Link></li>
+                    <li><Link to='/login' className="active">Login</Link></li>
                 </ul>
             </nav>
         </header>

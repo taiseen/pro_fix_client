@@ -32,13 +32,14 @@ body {
     color    : #000;
 }
 
-.homeNavigation ul li a:hover,
-.active {
+/* , .active */
+.homeNavigation ul li a:hover {
     color           : white;
     background-color: #005691;
     border-radius   : 5px;
     text-decoration : none;
 }
+
 
 #check_box {
     display: none;
