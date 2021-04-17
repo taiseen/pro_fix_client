@@ -1,4 +1,4 @@
-# React App <|> [Live Link](https://www.fb.com) 
+# React App <|> [Live Link](https://profixdb.web.app)
 
 ## Topic of Focus:
 - Responsive
@@ -14,5 +14,5 @@ Project is created with:
 * HTML5 
 * CSS3 (FlexBox)
 * React 
-* Firebase
+* Firebase (Hosting)
 * GitHub
