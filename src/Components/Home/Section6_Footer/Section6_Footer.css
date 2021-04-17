@@ -32,7 +32,6 @@
     color: #FFF
 }
 
-.pages {}
 
 div.pages * {
     color: #FFF
@@ -40,12 +39,11 @@ div.pages * {
 
 
 .links ul {
-    display       : flex;
-    flex-direction: column;
-
-    align-items    : flex-start;
-    justify-content: flex-start;
-    line-height    : .1em;
+    display           : flex;
+    flex-direction    : column;
+    align-items       : flex-start;
+    justify-content   : flex-start;
+    /* line-height    : .1em; */
 }
 
 

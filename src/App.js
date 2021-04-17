@@ -20,6 +20,9 @@ import A_OrderList from './Components/User/Admin/A_OrderList/A_OrderList';
 import B_AddService from './Components/User/Admin/B_AddService/B_AddService';
 import C_MakeAdmin from './Components/User/Admin/C_MakeAdmin/C_MakeAdmin';
 import D_ManageServices from './Components/User/Admin/D_ManageServices/D_ManageServices';
+import A_Service from './Components/User/Client/A_Service/A_Service';
+import B_Service_List from './Components/User/Client/B_Service_List/B_Service_List';
+import C_Review from './Components/User/Client/C_Review/C_Review';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -55,7 +58,7 @@ const App = () => {
                     </Route>
 
                     {/* Admin Route ==> START */}
-                    <Route path="/admin/orderList">
+                    <Route path="/admin/order_list">
                         <A_OrderList />
                     </Route>
                     <Route path="/admin/add_service">
@@ -69,7 +72,17 @@ const App = () => {
                     </Route>
                     {/* Admin Route ==> END */}
 
-
+                    {/* Client Route ==> START */}
+                    <Route path="/client/service">
+                        <A_Service />
+                    </Route>
+                    <Route path="/client/service_list">
+                        <B_Service_List />
+                    </Route>
+                    <Route path="/client/review">
+                        <C_Review />
+                    </Route>
+                    {/* Client Route ==> END */}
 
 
                     <Route exact path="/">

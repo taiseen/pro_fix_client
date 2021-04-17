@@ -1,14 +1,13 @@
 import React from 'react';
 import './A_OrderList.css';
-import CommonHeader from '../../CommonHeader';
+import AdminHeader from '../AdminHeader';
 
 const A_OrderList = () => {
 
-    
     return (
         <div class="main_container_admin">
 
-            <CommonHeader/>
+            <AdminHeader/>
 
             <main class="heading_area">
 

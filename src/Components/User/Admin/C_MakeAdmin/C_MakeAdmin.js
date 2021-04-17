@@ -1,12 +1,12 @@
 import React from 'react';
 import './C_MakeAdmin.css';
-import CommonHeader from '../../CommonHeader';
+import AdminHeader from '../AdminHeader';
 
 const C_MakeAdmin = () => {
     return (
         <div class="main_container_admin">
 
-        <CommonHeader/>
+        <AdminHeader/>
 
         <main class="heading_area">
 

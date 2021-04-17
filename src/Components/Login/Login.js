@@ -24,14 +24,14 @@ const Login = () => {
             <div class="login_area">
                 <h2>Login</h2>
 
-                
+                <Link to="/client/service">
                     <div class="with_google" onClick={handleLogin}>
                         <img src={google} alt="" />
                         <div>
                             <p>Continue with Google</p>
                         </div>
                     </div>
-                
+                </Link>
             </div>
         </div>
     );

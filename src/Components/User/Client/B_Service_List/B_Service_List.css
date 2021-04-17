@@ -1,0 +1,59 @@
+.client_service_container {
+    display        : flex;
+    align-items    : flex-start;
+    justify-content: flex-start;
+    flex-wrap      : wrap;
+}
+
+.service_box {
+    width           : 400px;
+    background-color: white;
+    margin          : 1.5em;
+    margin-right    : 0;
+    padding         : 1em;
+    border-radius   : 15px;
+    display         : flex;
+    flex-direction  : column;
+
+}
+
+.service_status {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : flex-start;
+    margin-bottom  : 1.5em;
+}
+
+.service_status img {
+    width: 20%;
+}
+
+.service_info h4 {
+    margin-bottom : .5em;
+    letter-spacing: .4px;
+    font-size     : 1.5em;
+}
+
+.service_info p {
+    letter-spacing: .4px;
+}
+
+.status {
+    cursor       : pointer;
+    border       : 0;
+    outline      : 0;
+    width        : 120px;
+    padding      : .5em 1em;
+    border-radius: 5px;
+    font-size    : 1.2em;
+}
+
+.pending {
+    background-color: #FFE1E3;
+    color           : #D95859;
+}
+
+.done {
+    background-color: #C6FFE0;
+    color           : #009444;
+}

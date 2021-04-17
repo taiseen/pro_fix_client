@@ -1,13 +1,13 @@
 import React from 'react';
 import '../A_OrderList/A_OrderList.css';
-import CommonHeader from '../../CommonHeader';
+import AdminHeader from '../AdminHeader';
 import deleteImg from '../../../../img/admin/delete.png';
 
 const D_ManageServices = () => {
     return (
         <div class="main_container_admin">
 
-            <CommonHeader />
+            <AdminHeader />
 
             <main class="heading_area">
 

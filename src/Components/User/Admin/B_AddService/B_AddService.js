@@ -1,13 +1,13 @@
 import React from 'react';
 import './B_AddService.css';
-import CommonHeader from '../../CommonHeader';
+import AdminHeader from '../AdminHeader';
 import uploadImg from '../../../../img/admin/upload.png';
 
 const B_AddService = () => {
     return (
         <div class="main_container_admin">
 
-            <CommonHeader />
+            <AdminHeader />
 
             <main class="heading_area">
                 <div class="heading_title">
@@ -36,7 +36,7 @@ const B_AddService = () => {
 
                         <div class="input_flex">
                             <label htmlFor="description">Description</label>
-                            <textarea id="description" rows="10">Enter Description</textarea>
+                            <textarea id="description" rows="8">Enter Description</textarea>
                         </div>
 
                         <div>
@@ -45,7 +45,7 @@ const B_AddService = () => {
                     </div>
                 </section>
             </main>
-        
+
         </div>
     );
 };
