@@ -1,19 +1,21 @@
 import React from 'react';
 import './B_AddService.css';
-import AdminHeader from '../AdminHeader';
+import AdminMenu from '../AdminMenu';
 import uploadImg from '../../../../img/admin/upload.png';
+import Header from '../../Header/Header';
 
 const B_AddService = () => {
+
+    document.title = 'Add Service';
+
     return (
         <div class="main_container_admin">
 
-            <AdminHeader />
+            <AdminMenu />
 
             <main class="heading_area">
-                <div class="heading_title">
-                    <h2>Add Service</h2>
-                    <h3 class="admin_name">Admin Name</h3>
-                </div>
+
+            <Header/>
 
                 {/* <!-- Another Section --> */}
                 <section class="interaction_area">

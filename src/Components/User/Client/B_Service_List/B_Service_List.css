@@ -25,7 +25,12 @@
 }
 
 .service_status img {
-    width: 20%;
+    width     : 20%;
+    transition: transform 1.5s;
+}
+
+.service_status img:hover {
+    transform: rotate(360deg);
 }
 
 .service_info h4 {
@@ -46,14 +51,24 @@
     padding      : .5em 1em;
     border-radius: 5px;
     font-size    : 1.2em;
+    transition   : .2s ease;
 }
 
 .pending {
     background-color: #FFE1E3;
     color           : #D95859;
+
+}
+
+.pending:hover {
+    box-shadow: 0 0 5px 0 #D95859;
 }
 
 .done {
     background-color: #C6FFE0;
     color           : #009444;
+}
+
+.done:hover {
+    box-shadow: 0 0 5px 0 #009444;
 }

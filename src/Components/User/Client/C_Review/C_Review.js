@@ -1,7 +1,7 @@
 import React from 'react';
 import '../A_Service/A_Service.css';
-import Menu from '../HeaderAndMenu/Menu';
-import Header from '../HeaderAndMenu/Header';
+import ClientMenu from '../ClientMenu';
+import Header from '../../Header/Header';
 
 
 const C_Review = () => {
@@ -12,7 +12,7 @@ const C_Review = () => {
         <div class="main_container_admin">
 
 
-            <Menu />
+            <ClientMenu />
 
             <main class="heading_area">
 
@@ -29,7 +29,6 @@ const C_Review = () => {
                         <button class="client_submit_btn" type="submit">Submit</button>
 
                     </form>
-
 
                 </section>
             </main>

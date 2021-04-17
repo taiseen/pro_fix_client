@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
-import '../../CommonHeader.css';
-import proFixLogo from '../../../../img/proFix.jpg';
-import service from '../../../../img/client/service.png';
-import service_list from '../../../../img/client/service_list.png';
-import review from '../../../../img/client/review.png';
-import logout from '../../../../img/client/logout.png';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../../../App';
+import { UserContext } from '../../../App';
+import '../CommonHeader.css';
+import proFixLogo from '../../../img/proFix.jpg';
+import service from '../../../img/client/service.png';
+import service_list from '../../../img/client/service_list.png';
+import review from '../../../img/client/review.png';
+import logout from '../../../img/client/logout.png';
 
 
-const Menu = () => {
+
+const ClientMenu = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
 
@@ -49,4 +50,4 @@ const Menu = () => {
     );
 };
 
-export default Menu;
+export default ClientMenu;

@@ -1,20 +1,21 @@
 import React from 'react';
 import '../A_OrderList/A_OrderList.css';
-import AdminHeader from '../AdminHeader';
+import AdminMenu from '../AdminMenu';
 import deleteImg from '../../../../img/admin/delete.png';
+import Header from '../../Header/Header';
 
 const D_ManageServices = () => {
+
+    document.title = 'Manage Services';
+
     return (
         <div class="main_container_admin">
 
-            <AdminHeader />
+            <AdminMenu />
 
             <main class="heading_area">
 
-                <div class="heading_title">
-                    <h2>Manage Services</h2>
-                    <h3 class="admin_name">Admin Name</h3>
-                </div>
+                <Header />
 
                 <section class="interaction_area">
 
@@ -38,7 +39,7 @@ const D_ManageServices = () => {
                                 <td>safu@gmail.com</td>
                                 <td>Mobile Servicing</td>
                                 <td>Credit card</td>
-                                <td><img src={deleteImg} alt="" /></td>
+                                <td><img src={deleteImg} class="delete_img" alt="" /></td>
                             </tr>
 
                         </tbody>

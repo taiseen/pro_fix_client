@@ -24,10 +24,10 @@
 }
 
 .service_container {
-    display: flex;
-    flex-wrap: wrap;
+    display        : flex;
+    flex-wrap      : wrap;
     justify-content: center;
-    align-items: center;
+    align-items    : center;
 }
 
 .service_card {
@@ -46,7 +46,12 @@
 }
 
 .service_card img {
-    width: 50%;
+    width     : 50%;
+    transition: transform 1.5s;
+}
+
+.service_card img:hover {
+    transform: rotate(360deg);
 }
 
 .service_card p {

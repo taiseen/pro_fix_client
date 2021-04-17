@@ -66,3 +66,13 @@ select {
 table tr td img {
     width: 1.5em;
 }
+table tr td  {
+    text-align: center;
+}
+
+.delete_img{
+    transition: .2s ease-in-out;
+}
+.delete_img:hover{
+    box-shadow: 0 0 .8em 0 red;
+}

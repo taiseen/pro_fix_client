@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import './A_OrderList.css';
-import AdminHeader from '../AdminHeader';
+import AdminMenu from '../AdminMenu';
 import { UserContext } from '../../../../App';
+import Header from '../../Header/Header';
 
 const A_OrderList = () => {
+    document.title = 'Order List';
 
     const [loginUser, setLoginUser] = useContext(UserContext);
 
@@ -11,14 +13,11 @@ const A_OrderList = () => {
     return (
         <div class="main_container_admin">
 
-            <AdminHeader/>
+            <AdminMenu/>
 
             <main class="heading_area">
 
-                <div class="heading_title">
-                    <h2>Order List</h2>
-                    <h3 class="admin_name">Admin Name</h3>
-                </div>
+            <Header/>
 
                 <section class="interaction_area">
 
