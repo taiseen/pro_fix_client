@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './A_OrderList.css';
 import AdminHeader from '../AdminHeader';
+import { UserContext } from '../../../../App';
 
 const A_OrderList = () => {
+
+    const [loginUser, setLoginUser] = useContext(UserContext);
+
 
     return (
         <div class="main_container_admin">

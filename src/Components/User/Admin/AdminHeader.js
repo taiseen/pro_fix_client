@@ -6,7 +6,7 @@ import add_service from '../../../img/admin/plus.png';
 import add_admin from '../../../img/admin/add_admin.png';
 import manage_service from '../../../img/admin/edit.png';
 import logout from '../../../img/admin/logout.png';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const AdminHeader = () => {
     return (
@@ -14,7 +14,9 @@ const AdminHeader = () => {
         <header class="commonHeading">
 
             <div class="logo">
-                <img src={proFixLogo} alt="" />
+                <Link to="/home">
+                    <img src={proFixLogo} alt="" />
+                </Link>
             </div>
 
             <nav>

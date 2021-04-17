@@ -1,20 +1,26 @@
-import React from 'react';
-import '../CommonHeader.css';
-import proFixLogo from '../../../img/proFix.jpg';
-import service from '../../../img/client/service.png';
-import service_list from '../../../img/client/service_list.png';
-import review from '../../../img/client/review.png';
-import logout from '../../../img/client/logout.png';
+import React, { useContext } from 'react';
+import '../../CommonHeader.css';
+import proFixLogo from '../../../../img/proFix.jpg';
+import service from '../../../../img/client/service.png';
+import service_list from '../../../../img/client/service_list.png';
+import review from '../../../../img/client/review.png';
+import logout from '../../../../img/client/logout.png';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../../App';
 
 
-const ClientHeader = () => {
+const Menu = () => {
+
+    const [loginUser, setLoginUser] = useContext(UserContext);
+
     return (
 
         <header class="commonHeading">
 
             <div class="logo">
-                <img src={proFixLogo} alt="" />
+                <Link to="/home">
+                    <img src={proFixLogo} alt="" />
+                </Link>
             </div>
 
             <nav>
@@ -33,7 +39,8 @@ const ClientHeader = () => {
                     </li>
                     <li>
                         <img src={logout} class="client_link_icon" alt="" />
-                        <Link to='/'>Logout</Link>
+                        <Link onClick={() => setLoginUser({})} to='/'>Logout</Link>
+                        {/* <button onClick={() => setLoginUser({})} >Logout</button> */}
                     </li>
                 </ul>
             </nav>
@@ -42,4 +49,4 @@ const ClientHeader = () => {
     );
 };
 
-export default ClientHeader;
+export default Menu;

@@ -1,23 +1,24 @@
 import React from 'react';
 import './B_Service_List.css';
-import ClientHeader from '../ClientHeader';
+import Menu from '../HeaderAndMenu/Menu';
 
 import laptop from '../../../../img/services/laptop.png';
 import motherboard from '../../../../img/services/motherboard.png';
+import Header from '../HeaderAndMenu/Header';
 
 const B_Service_List = () => {
+
+    document.title = 'Service List';
+
     return (
         <div class="main_container_admin">
 
-            <ClientHeader />
-
+            <Menu />
 
             <main class="heading_area">
 
-                <div class="heading_title">
-                    <h2>Service List</h2>
-                    <h3 class="client_name">User Name</h3>
-                </div>
+                <Header />
+
 
                 {/* <!-- Another Section --> */}
                 <section class="interaction_area client_service_container">

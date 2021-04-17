@@ -12,9 +12,7 @@ import {
 import Home from './Components/Home/Home';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 
-import firebase from "firebase/app";
-import "firebase/auth";
-import firebaseConfig from './Components/FireBase/FireBaseConfig';
+
 import Login from './Components/Login/Login';
 import A_OrderList from './Components/User/Admin/A_OrderList/A_OrderList';
 import B_AddService from './Components/User/Admin/B_AddService/B_AddService';
@@ -23,18 +21,13 @@ import D_ManageServices from './Components/User/Admin/D_ManageServices/D_ManageS
 import A_Service from './Components/User/Client/A_Service/A_Service';
 import B_Service_List from './Components/User/Client/B_Service_List/B_Service_List';
 import C_Review from './Components/User/Client/C_Review/C_Review';
-
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-} else {
-    firebase.app(); // if already initialized, use that one
-}
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 // 11-March-2021
 // after finish ==>> attach output-ui
 // Last focus on README file...
 
-export const UserContext = createContext();
+export const UserContext = createContext({});
 
 const App = () => {
 
@@ -58,30 +51,30 @@ const App = () => {
                     </Route>
 
                     {/* Admin Route ==> START */}
-                    <Route path="/admin/order_list">
+                    <PrivateRoute path="/admin/order_list">
                         <A_OrderList />
-                    </Route>
-                    <Route path="/admin/add_service">
+                    </PrivateRoute>
+                    <PrivateRoute path="/admin/add_service">
                         <B_AddService />
-                    </Route>
-                    <Route path="/admin/make_admin">
+                    </PrivateRoute>
+                    <PrivateRoute path="/admin/make_admin">
                         <C_MakeAdmin />
-                    </Route>
-                    <Route path="/admin/manage_services">
+                    </PrivateRoute>
+                    <PrivateRoute path="/admin/manage_services">
                         <D_ManageServices />
-                    </Route>
+                    </PrivateRoute>
                     {/* Admin Route ==> END */}
 
                     {/* Client Route ==> START */}
-                    <Route path="/client/service">
+                    <PrivateRoute path="/client/service">
                         <A_Service />
-                    </Route>
-                    <Route path="/client/service_list">
+                    </PrivateRoute>
+                    <PrivateRoute path="/client/service_list">
                         <B_Service_List />
-                    </Route>
-                    <Route path="/client/review">
+                    </PrivateRoute>
+                    <PrivateRoute path="/client/review">
                         <C_Review />
-                    </Route>
+                    </PrivateRoute>
                     {/* Client Route ==> END */}
 
 

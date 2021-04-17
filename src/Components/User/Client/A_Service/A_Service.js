@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './A_Service.css';
-import ClientHeader from '../ClientHeader';
+import Menu from '../HeaderAndMenu/Menu';
 
 import credit_card from '../../../../img/client/credit_card.png';
 import paypal from '../../../../img/client/paypal.png';
+import { UserContext } from '../../../../App';
+import Header from '../HeaderAndMenu/Header';
 
 const A_Service = () => {
+    document.title = 'Service';
+
     return (
         <div class="main_container_admin">
 
-            <ClientHeader />
+            <Menu />
 
             <main class="heading_area">
 
-                <div class="heading_title">
-                    <h2>Service</h2>
-                    <h3 class="client_name">User Name</h3>
-                </div>
+                <Header/>
 
                 <section class="interaction_area">
 
@@ -53,6 +54,7 @@ const A_Service = () => {
 
 
                 </section>
+            
             </main>
         </div>
     );

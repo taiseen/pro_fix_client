@@ -1,20 +1,22 @@
 import React from 'react';
 import '../A_Service/A_Service.css';
-import ClientHeader from '../ClientHeader';
+import Menu from '../HeaderAndMenu/Menu';
+import Header from '../HeaderAndMenu/Header';
+
 
 const C_Review = () => {
+
+    document.title = 'Review';
+
     return (
         <div class="main_container_admin">
 
 
-            <ClientHeader />
+            <Menu />
 
             <main class="heading_area">
 
-                <div class="heading_title">
-                    <h2>Review</h2>
-                    <h3 class="client_name">User Name</h3>
-                </div>
+                <Header />
 
                 {/* <!-- Another Section --> */}
                 <section class="interaction_area">
@@ -25,7 +27,7 @@ const C_Review = () => {
                         <input type="text" placeholder="Company Name" required class="user_input" />
                         <textarea name="" id="" rows="10" cols="40" class="user_input">Description</textarea>
                         <button class="client_submit_btn" type="submit">Submit</button>
-                        
+
                     </form>
 
 
