@@ -15,7 +15,11 @@ import PageNotFound from './Components/PageNotFound/PageNotFound';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './Components/FireBase/FireBaseConfig';
-import LoginPage from './Components/LoginPage/LoginPage';
+import Login from './Components/Login/Login';
+import A_OrderList from './Components/User/Admin/A_OrderList/A_OrderList';
+import B_AddService from './Components/User/Admin/B_AddService/B_AddService';
+import C_MakeAdmin from './Components/User/Admin/C_MakeAdmin/C_MakeAdmin';
+import D_ManageServices from './Components/User/Admin/D_ManageServices/D_ManageServices';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -43,16 +47,30 @@ const App = () => {
                     </Route>
 
                     <Route path="/login">
-                        <LoginPage />
+                        <Login />
                     </Route>
 
                     <Route path="/:">
 
                     </Route>
 
-                    <Route path="/client">
-                        <Home />
+                    {/* Admin Route ==> START */}
+                    <Route path="/admin/orderList">
+                        <A_OrderList />
                     </Route>
+                    <Route path="/admin/add_service">
+                        <B_AddService />
+                    </Route>
+                    <Route path="/admin/make_admin">
+                        <C_MakeAdmin />
+                    </Route>
+                    <Route path="/admin/manage_services">
+                        <D_ManageServices />
+                    </Route>
+                    {/* Admin Route ==> END */}
+
+
+
 
                     <Route exact path="/">
                         <Home />

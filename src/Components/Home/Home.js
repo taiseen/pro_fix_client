@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from './Header/Header';
 import Section1_Banner from './Section1_Banner/Section1_Banner';
 import Section2_Static_Service from './Section2_Static_Service/Section2_Static_Service';
@@ -6,19 +6,8 @@ import Section3_Dynamic_Service from './Section3_Dynamic_Service/Section3_Dynami
 import Section4_User_Reviews from './Section4_User_Reviews/Section4_User_Reviews';
 import Section5_Map from './Section5_Map/Section5_Map';
 import Section6_Footer from './Section6_Footer/Section6_Footer';
-const Home = () => {
 
-    /*  
-        const [ variableName , setVariableName ] = useState([ WHAT DATA IT IS ])
-    
-        useEffect( ()=>{
-            const url = `www`
-            fetch(url)
-            .then(res => res.json())
-            .then(data => setVariableName(data.IF_HAVE_ANY_KEY))
-            .catch(error => console.log(error))
-        },[]) 
-    */
+const Home = () => {
 
     return (
         <main>

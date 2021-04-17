@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LoginPage.css';
+import './Login.css';
 import google from '../../img/google.png';
-import profixLogo from '../../img/profix.jpg';
+import proFixLogo from '../../img/proFix.jpg';
 
-const LoginPage = () => {
+const Login = () => {
     document.title = 'Login';
 
 
@@ -17,7 +17,7 @@ const LoginPage = () => {
 
             <div class="logo">
                 <Link to="/home">
-                <img src={profixLogo} alt="" />
+                <img src={proFixLogo} alt="" />
                 </Link>
             </div>
 
@@ -37,4 +37,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default Login;

@@ -1,16 +1,18 @@
 # React App <|> [Live Link](https://www.fb.com) 
 
 ## Topic of Focus:
-- API Call Here
-- Dual Fetch for Logo
-- Show Data with Logo
-- Conditional Formatting Image
+- Responsive
+- API calling
+- Admin panel
+- Client side for interaction
 - Favicon icon add 
+- Page-title set dynamically
+- Organize way file structure
 
 ## Technologies :
 Project is created with:
 * HTML5 
-* CSS + BootStrap
+* CSS3 (FlexBox)
 * React 
-* Netlify
+* Firebase
 * GitHub
