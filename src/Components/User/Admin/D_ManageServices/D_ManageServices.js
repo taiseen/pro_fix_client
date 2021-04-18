@@ -25,7 +25,7 @@ const D_ManageServices = () => {
             })
             .catch(error => console.log(error))
 
-    }, [allRequestedService]); //allRequestedService
+    }, [allRequestedService]);
 
 
     const handleDelete = (id) => {
@@ -37,7 +37,6 @@ const D_ManageServices = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data) {
                         alert('Delete Successfully...')
                     }
@@ -76,19 +75,21 @@ const D_ManageServices = () => {
                         <tbody>
 
                             {
-                                allRequestedService.map(service => {
+                                loading
+                                    ? <Spinner animation="border" variant="danger" />
+                                    : allRequestedService.map((service, index) => {
 
-                                    const { _id, name, email, serviceName, payment_method } = service;
+                                        const { _id, name, email, serviceName, payment_method } = service;
 
-                                    return <tr key={_id}>
-                                        <td>{1}</td>
-                                        <td>{name}</td>
-                                        <td>{email}</td>
-                                        <td>{serviceName}</td>
-                                        <td>{payment_method}</td>
-                                        <td><img src={deleteImg} onClick={() => handleDelete(service._id)} class="delete_img" alt="" /></td>
-                                    </tr>;
-                                })
+                                        return <tr key={_id}>
+                                            <td>{index + 1}</td>
+                                            <td>{name}</td>
+                                            <td>{email}</td>
+                                            <td>{serviceName}</td>
+                                            <td>{payment_method}</td>
+                                            <td><img src={deleteImg} onClick={() => handleDelete(service._id)} class="delete_img" alt="" /></td>
+                                        </tr>;
+                                    })
                             }
 
                         </tbody>

@@ -58,13 +58,13 @@ const A_OrderList = () => {
                             {
                                 loading
                                     ? <Spinner animation="border" variant="danger" />
-                                    : allRequestedService.map(service => {
+                                    : allRequestedService.map((service, index) => {
 
                                         const { name, email, serviceName, payment_method, status } = service;
 
                                         return (
                                             <tr>
-                                                <td>1</td>
+                                                <td>{index+1}</td>
                                                 <td>{name}</td>
                                                 <td>{email}</td>
                                                 <td>{serviceName}</td>
