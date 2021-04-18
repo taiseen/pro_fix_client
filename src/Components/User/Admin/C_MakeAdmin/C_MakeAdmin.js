@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './C_MakeAdmin.css';
 import AdminMenu from '../AdminMenu';
 import Header from '../../Header/Header';
@@ -6,6 +6,41 @@ import Header from '../../Header/Header';
 const C_MakeAdmin = () => {
 
     document.title = 'Make Admin';
+
+    const [adminEmail, setAdminEmail] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (adminEmail) {
+
+            const email = { adminEmail };
+
+            const url = `http://localhost:5000/addAdmin`;
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(email)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result) {
+                        alert('Admin Added Successfully...');
+
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+
+        // clear input values from input field...
+        e.target.reset();
+    }
+
+
+
+    //##########################################################################################
+    //##########################################################################################
+    //##########################################################################################
 
     return (
         <div class="main_container_admin">
@@ -21,17 +56,24 @@ const C_MakeAdmin = () => {
 
                     <div class="admin_making_area">
 
-                        <div class="admin_making_input">
+
+                        <form onSubmit={handleSubmit} method="post" class="admin_making_input">
                             <div class="input_flex">
                                 <label htmlFor="admin_email">Email</label>
-                                <input id="admin_email" type="text" required placeholder="jon@gmail.com" />
+                                <input
+                                    required
+                                    type="email"
+                                    id="admin_email"
+                                    placeholder="jon@gmail.com"
+                                    onChange={event => setAdminEmail(event.target.value)} />
                             </div>
 
                             <div>
                                 <button class="make_admin_submit_btn" type="submit">Submit</button>
                             </div>
+                        </form>
 
-                        </div>
+
                     </div>
                 </section>
             </main>

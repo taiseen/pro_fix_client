@@ -24,9 +24,13 @@ const Login = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
 
+    console.log(loginUser);
+
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
+
+    
 
 
     const storeUserToken = () => {
@@ -47,7 +51,7 @@ const Login = () => {
             .then(result => {
                 // Get User Needful Info...
                 const { displayName, email, photoURL } = result.user;
-                console.log(result.user);
+                //console.log(result.user);
 
                 // creating a new object...
                 const signInUser = {
@@ -55,9 +59,9 @@ const Login = () => {
                     email,
                     photo: photoURL,
                 }
-                console.log(signInUser);
+                //console.log(signInUser);
 
-                //storeUserToken();
+                storeUserToken();
                 setLoginUser(signInUser);
                 history.replace(from);
 
@@ -80,14 +84,13 @@ const Login = () => {
             <div class="login_area">
                 <h2>Login</h2>
 
-                <Link to="/client/service">
-                    <div class="with_google" onClick={handleLogin}>
-                        <img src={google} alt="" />
-                        <div>
-                            <p>Continue with Google</p>
-                        </div>
+                <div class="with_google" onClick={handleLogin}>
+                    <img src={google} alt="" />
+                    <div>
+                        <p>Continue with Google</p>
                     </div>
-                </Link>
+                </div>
+
             </div>
         </div>
     );

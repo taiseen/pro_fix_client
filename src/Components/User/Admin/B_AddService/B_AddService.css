@@ -11,10 +11,10 @@
 }
 
 .service_input_area>* {
-    flex-basis    : 45%;
-    margin        : 2em;
+    flex-basis       : 45%;
+    margin           : 2em;
     /* display       : flex;
-    flex-direction: column; */
+    flex-direction   : column; */
 }
 
 .input_flex label {
@@ -23,6 +23,7 @@
 }
 
 #service_name,
+#service_price,
 #description {
     padding  : .3em;
     font-size: 1.5em;
@@ -45,7 +46,7 @@
     border-radius   : 8px;
     color           : #005691;
     padding         : .3em 1.5em;
-    width           : 250px;
+    width           : 280px;
     display         : flex;
     align-items     : center;
     background-color: #EDEAFF;
@@ -74,4 +75,9 @@
 
 .btn_submit:hover {
     box-shadow: 2px 2px 10px 0px #005691;
+}
+
+.spinnerLoading {
+    display        : flex;
+    justify-content: center;
 }

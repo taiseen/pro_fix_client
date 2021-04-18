@@ -14,5 +14,7 @@ Project is created with:
 * HTML5 
 * CSS3 (FlexBox)
 * React 
+* Axios - for file uploading
+* Imgbb for images
 * Firebase (Hosting)
 * GitHub

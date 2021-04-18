@@ -89,12 +89,17 @@ body {
     font-size      : 1.3em;
 }
 
+.titleText{
+    color: #005691;
+    font-weight: 700;
+    
+}
 .admin_name {
     color: tomato
 }
 
 .client_name {
-    color: green
+    color: #005691
 }
 
 

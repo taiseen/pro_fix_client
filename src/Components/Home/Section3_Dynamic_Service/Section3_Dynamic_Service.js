@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Section3_Dynamic_Service.css';
-
-import laptop from '../../../img/services/laptop.png';
-import motherboard from '../../../img/services/motherboard.png';
-import repair from '../../../img/services/repair.png';
-import sound_card from '../../../img/services/sound-card.png';
+import SingleService from './SingleService/SingleService';
 
 const Section3_Dynamic_Service = () => {
+
+    const [allServices, setAllServices] = useState([]);
+
+    //console.log(allServices)
+
+    // GET data from server
+    useEffect(() => {
+        const url = `http://localhost:5000/allServices`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setAllServices(data);
+            })
+            .catch(error => console.log(error))
+    }, [])
+
+
+    //##########################################################################################
+    //##########################################################################################
+    //##########################################################################################
+
     return (
         <section className="service_area">
 
@@ -16,40 +33,15 @@ const Section3_Dynamic_Service = () => {
             </div>
 
             <div className="service_container">
-
-                <div className="service_card">
-                    <img src={laptop} alt="" />
-                    <p>Laptop Servicing</p>
-                    <p className="service_price">$299</p>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, hic.</p>
-                </div>
-
-                <div className="service_card">
-                    <img src={motherboard} alt="" />
-                    <p>Motherboard Servicing</p>
-                    <p className="service_price">$299</p>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, hic.</p>
-                </div>
-
-                <div className="service_card">
-                    <img src={repair} alt="" />
-                    <p>Phone Servicing</p>
-                    <p className="service_price">$299</p>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, hic.</p>
-                </div>
-
-                <div className="service_card">
-                    <img src={sound_card} alt="" />
-                    <p>Sound Card Servicing</p>
-                    <p className="service_price">$299</p>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, hic.</p>
-                </div>
-
+                {
+                    allServices.map(service => <SingleService info={service} />)
+                }
             </div>
 
             <div>
                 <button>Explore More</button>
             </div>
+
         </section>
 
     );
