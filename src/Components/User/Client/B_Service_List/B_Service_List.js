@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './B_Service_List.css';
 import ClientMenu from '../ClientMenu';
-import laptop from '../../../../img/services/laptop.png';
-import motherboard from '../../../../img/services/motherboard.png';
 import Header from '../../Header/Header';
+import { UserContext } from '../../../../App';
+import SingleService from './SingleService/SingleService';
+import { Spinner } from 'react-bootstrap';
 
 const B_Service_List = () => {
 
     document.title = 'Service List';
+
+    const [loginUser, setLoginUser] = useContext(UserContext);
+    const [requestedService, setRequestedService] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    console.log(requestedService)
+
+    useEffect(() => {
+        const url = `https://profixdb.herokuapp.com/yourServiceList?email=${loginUser.email}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setLoading(false);
+                setRequestedService(data)
+            })
+            .catch(error => console.log(error))
+    }, []);
+
+    //##########################################################################################
+    //##########################################################################################
+    //##########################################################################################
 
     return (
         <div class="main_container_admin">
@@ -18,36 +40,19 @@ const B_Service_List = () => {
 
                 <Header />
 
-                {/* <!-- Another Section --> */}
+
+                {/* Another Section */}
                 <section class="interaction_area client_service_container">
-
-                    <div class="service_box">
-                        
-                        <div class="service_status">
-                            <img src={laptop} alt="" />
-                            <button class="status pending">Pending</button>
-                        </div>
-
-                        <div class="service_info">
-                            <h4>Laptop Servicing</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem animi corporis dolorem, dolore itaque doloribus.</p>
-                        </div>
-                        
-                    </div>
-
-
-                    <div class="service_box">
-                        <div class="service_status">
-                            <img src={motherboard} alt="" />
-                            <button class="status done">Done</button>
-                        </div>
-                        <div class="service_info">
-                            <h4>Laptop Servicing</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem animi corporis dolorem, dolore itaque doloribus.</p>
-                        </div>
-                    </div>
-
+                    {
+                        loading ?
+                            <Spinner animation="border" variant="danger" /> :
+                            null
+                    }
+                    {
+                        requestedService.map(service => <SingleService info={service} />)
+                    }
                 </section>
+
             </main>
 
         </div>

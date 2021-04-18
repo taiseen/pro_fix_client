@@ -17,7 +17,7 @@ const C_Review = () => {
     const onSubmit = (userInfo, e) => {
 
         userInfo.photo = loginUser.photo;
-        //console.log(userInfo)
+        userInfo.time = new Date();
 
         const url = `https://profixdb.herokuapp.com/review`;
         fetch(url, {

@@ -1,25 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import './A_OrderList.css';
 import AdminMenu from '../AdminMenu';
-import { UserContext } from '../../../../App';
 import Header from '../../Header/Header';
+import { Spinner } from 'react-bootstrap';
+
 
 const A_OrderList = () => {
     document.title = 'Order List';
 
-    const [loginUser, setLoginUser] = useContext(UserContext);
+    const [allRequestedService, setAllRequestedService] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+    console.log(allRequestedService)
 
+    useEffect(() => {
+        const url = `https://profixdb.herokuapp.com/allServiceRequest`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setLoading(false);
+                setAllRequestedService(data)
+            })
+            .catch(error => console.log(error))
 
-
-
-
-
-
-
-
-
-
+    }, []);
 
 
     //##########################################################################################
@@ -51,50 +55,31 @@ const A_OrderList = () => {
 
 
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Safiul Ahmed Hamim</td>
-                                <td>safu@gmail.com</td>
-                                <td>Mobile Servicing</td>
-                                <td>Credit card</td>
-                                <td>
-                                    <select name="" id="options">
-                                        <option value="" class="pending">Pending</option>
-                                        <option value="" class="on_going">On Going</option>
-                                        <option value="" class="done">Done</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Safiul Ahmed Hamim</td>
-                                <td>safu@gmail.com</td>
-                                <td>Mobile Servicing</td>
-                                <td>Credit card</td>
-                                <td>
-                                    <select name="" id="">
-                                        <option value="" class="pending">Pending</option>
-                                        <option value="" class="on_going">On Going</option>
-                                        <option value="" class="done">Done</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Safiul Ahmed Hamim</td>
-                                <td>safu@gmail.com</td>
-                                <td>Mobile Servicing</td>
-                                <td>Credit card</td>
-                                <td>
-                                    <select name="" id="">
-                                        <option value="" class="pending">Pending</option>
-                                        <option value="" class="on_going">On Going</option>
-                                        <option value="" class="done">Done</option>
-                                    </select>
-                                </td>
-                            </tr>
+                            {
+                                loading
+                                    ? <Spinner animation="border" variant="danger" />
+                                    : allRequestedService.map(service => {
 
+                                        const { name, email, serviceName, payment_method, status } = service;
 
+                                        return (
+                                            <tr>
+                                                <td>1</td>
+                                                <td>{name}</td>
+                                                <td>{email}</td>
+                                                <td>{serviceName}</td>
+                                                <td>{payment_method}</td>
+                                                <td>
+                                                    <select name="" id="options" value={status}>
+                                                        <option value="" class="pending">Pending</option>
+                                                        <option value="" class="on_going">On Going</option>
+                                                        <option value="" class="done">Done</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+                            }
                         </tbody>
 
                     </table>

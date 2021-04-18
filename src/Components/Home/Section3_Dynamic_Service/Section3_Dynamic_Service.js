@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Section3_Dynamic_Service.css';
-import SingleService from './SingleService/SingleService';
 
 const Section3_Dynamic_Service = () => {
 
     const [allServices, setAllServices] = useState([]);
 
-    //console.log(allServices)
-
-    // GET data from server
     useEffect(() => {
         const url = `https://profixdb.herokuapp.com/allServices`;
         fetch(url)
@@ -34,7 +30,17 @@ const Section3_Dynamic_Service = () => {
 
             <div className="service_container">
                 {
-                    allServices.map(service => <SingleService info={service} />)
+                    allServices.map(service => {
+
+                        const { iconURL, serviceName, servicePrice, serviceDescription } = service;
+
+                        return <div className="service_card">
+                            <img src={iconURL} alt="" />
+                            <p>{serviceName}</p>
+                            <p className="service_price">${servicePrice}</p>
+                            <p>{serviceDescription}</p>
+                        </div>
+                    })
                 }
             </div>
 
