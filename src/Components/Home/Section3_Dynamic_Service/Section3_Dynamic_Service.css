@@ -33,6 +33,7 @@
 .service_card {
     cursor       : pointer;
     width        : 300px;
+    height       : 350px;
     margin-bottom: 1.5em;
     margin-left  : 1em;
     border-radius: 5px;

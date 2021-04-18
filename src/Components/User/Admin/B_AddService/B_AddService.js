@@ -28,7 +28,7 @@ const B_AddService = () => {
 
 
         setLoading(true);
-        const url = `http://localhost:5000/addService`;
+        const url = `https://profixdb.herokuapp.com/addService`;
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

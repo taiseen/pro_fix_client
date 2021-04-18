@@ -9,7 +9,7 @@ const Section4_User_Reviews = () => {
     //console.log(allUsersReviews);
 
     useEffect(() => {
-        const url = `http://localhost:5000/allReview`;
+        const url = `https://profixdb.herokuapp.com/allReview`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

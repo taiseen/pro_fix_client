@@ -14,8 +14,8 @@ const SingleUserReview = ({ info }) => {
                     <img src={photo} alt="" />
                 </div>
                 <div class="user_info">
-                    <h3>{name}</h3>
-                    <h5>{title}</h5>
+                    <h4>{name}</h4>
+                    <h6>{title}</h6>
                 </div>
             </div>
 

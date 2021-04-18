@@ -16,7 +16,7 @@ const C_MakeAdmin = () => {
 
             const email = { adminEmail };
 
-            const url = `http://localhost:5000/addAdmin`;
+            const url = `https://profixdb.herokuapp.com/addAdmin`;
             fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

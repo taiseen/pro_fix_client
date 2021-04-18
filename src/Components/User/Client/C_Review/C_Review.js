@@ -19,7 +19,7 @@ const C_Review = () => {
         userInfo.photo = loginUser.photo;
         //console.log(userInfo)
 
-        const url = `http://localhost:5000/review`;
+        const url = `https://profixdb.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

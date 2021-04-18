@@ -21,12 +21,17 @@
 
 .user_review_card {
     width           : 380px;
+    height          : 280px;
     padding         : 1em;
     margin          : 0 1em 1em 0;
     cursor          : pointer;
     background-color: #F6F6F6;
     border-radius   : 10px;
     transition      : .2s ease;
+
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
 }
 
 .user_review_card:hover {
@@ -49,8 +54,8 @@
 
 }
 
-.user_info {
-    margin-bottom: .5em;
+.user_info * {
+    line-height: .8em;
 }
 
 .user_review {

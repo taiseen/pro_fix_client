@@ -10,7 +10,7 @@ const Section3_Dynamic_Service = () => {
 
     // GET data from server
     useEffect(() => {
-        const url = `http://localhost:5000/allServices`;
+        const url = `https://profixdb.herokuapp.com/allServices`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
