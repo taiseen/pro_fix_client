@@ -14,6 +14,7 @@ const ClientMenu = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
 
+
     return (
 
         <header class="commonHeading">
@@ -24,26 +25,29 @@ const ClientMenu = () => {
                 </Link>
             </div>
 
-            <nav>
-                <ul class="admin_menu_list">
-                    <li>
-                        <img src={service} class="client_link_icon" alt="" />
-                        <Link to='/client/service'>Service</Link>
-                    </li>
-                    <li>
-                        <img src={service_list} class="client_link_icon" alt="" />
-                        <Link to='/client/service_list'>Service List</Link>
-                    </li>
-                    <li>
-                        <img src={review} class="client_link_icon" alt="" />
-                        <Link to='/client/review'>Review</Link>
-                    </li>
-                    <li>
-                        <img src={logout} class="client_link_icon" alt="" />
-                        <Link onClick={() => setLoginUser({})} to='/'>Logout</Link>
-                        {/* <button onClick={() => setLoginUser({})} >Logout</button> */}
-                    </li>
-                </ul>
+            <nav class="admin_menu_list">
+
+                <Link to='/client/service'>
+                    <img src={service} class="client_link_icon" alt="" />
+                    <span>Service</span>
+                </Link>
+
+                <Link to='/client/service_list'>
+                    <img src={service_list} class="client_link_icon" alt="" />
+                    <span>Service List</span>
+                </Link>
+
+                <Link to='/client/review'>
+                    <img src={review} class="client_link_icon" alt="" />
+                    <span>Review</span>
+                </Link>
+
+                <Link onClick={() => setLoginUser({})} to='/'>
+                    <img src={logout} class="client_link_icon" alt="" />
+                    <span>Logout</span>
+                    {/* <button onClick={() => setLoginUser({})} >Logout</button> */}
+                </Link>
+
             </nav>
 
         </header>

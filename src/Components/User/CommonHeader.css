@@ -47,7 +47,7 @@ body {
     margin-right: .5em;
 }
 
-.admin_menu_list>li {
+.admin_menu_list>a {
     display    : flex;
     align-items: center;
     cursor     : pointer;
@@ -56,18 +56,21 @@ body {
 
 }
 
-.admin_menu_list li:hover {
-    background: #F5F6FA;
-}
-
-.admin_menu_list>li>a {
-    color: black;
-}
-
-.admin_menu_list>li>a:hover {
-    color          : black;
+.admin_menu_list>a:hover {
+    background     : #F5F6FA;
     text-decoration: none;
+    /* border-top     : .5px dotted black;
+    border-bottom  : .5px dotted black; */
 }
+
+
+.admin_menu_list>a:focus {
+    background      : #F5F6FA;
+    /* border-top   : 1px dotted black;
+    border-bottom   : 1px dotted black;
+    border-left     : 1px dotted black; */
+}
+
 
 .link_icon:hover {
     color: red;
@@ -89,11 +92,12 @@ body {
     font-size      : 1.3em;
 }
 
-.titleText{
-    color: #005691;
+.titleText {
+    color      : #005691;
     font-weight: 700;
-    
+
 }
+
 .admin_name {
     color: tomato
 }

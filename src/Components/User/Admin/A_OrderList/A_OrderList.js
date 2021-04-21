@@ -71,9 +71,9 @@ const A_OrderList = () => {
                                                 <td>{payment_method}</td>
                                                 <td>
                                                     <select name="" id="options" value={status}>
-                                                        <option value="" class="pending">Pending</option>
-                                                        <option value="" class="on_going">On Going</option>
-                                                        <option value="" class="done">Done</option>
+                                                        <option value={status} class="pending">Pending</option>
+                                                        <option value={status} class="on_going">On Going</option>
+                                                        <option value={status} class="done">Done</option>
                                                     </select>
                                                 </td>
                                             </tr>
