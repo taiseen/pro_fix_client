@@ -29,9 +29,9 @@ const Section4_User_Reviews = () => {
             <div class="user_review_card_container">
                 {
                     allUsersReviews.map(review => {
-                        const { photo, name, title, description } = review;
+                        const { _id, photo, name, title, description } = review;
                         return (
-                            <div class="user_review_card">
+                            <div class="user_review_card" key={_id}>
                                 <div class="user_box">
                                     <div class="user_img">
                                         <img src={photo} alt="" />

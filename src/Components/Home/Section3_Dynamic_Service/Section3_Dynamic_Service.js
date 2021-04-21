@@ -32,9 +32,9 @@ const Section3_Dynamic_Service = () => {
                 {
                     allServices.map(service => {
 
-                        const { iconURL, serviceName, servicePrice, serviceDescription } = service;
+                        const { _id, iconURL, serviceName, servicePrice, serviceDescription } = service;
 
-                        return <div className="service_card">
+                        return <div className="service_card" key={_id}>
                             <img src={iconURL} alt="" />
                             <p>{serviceName}</p>
                             <p className="service_price">${servicePrice}</p>

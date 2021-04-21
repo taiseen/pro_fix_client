@@ -5,19 +5,21 @@ import { UserContext } from '../../../App';
 const Header = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
-    let [toggleClassName, setToggleClassName] = useState('');
+    //let [toggleClassName, setToggleClassName] = useState('');
 
     const location = useLocation();
-    const { from } = location.state || { from: { pathname: "/" } };
-    console.log(from.pathname);
+    const firstWord = location.pathname.slice(0, 6);
 
-    //pathname: "/admin/order_list"
-
-    if(from.pathname == '/admin/order_list'){
+    let toggleClassName ;
+    if(firstWord == '/admin'){
+        //setToggleClassName('admin_name');
         toggleClassName = 'admin_name';
     } else {
+        //setToggleClassName('client_name')
         toggleClassName = 'client_name';
     }
+
+    //console.log(toggleClassName);
 
     return (
         <div class="heading_title">

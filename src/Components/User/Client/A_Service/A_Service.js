@@ -82,7 +82,7 @@ const A_Service = () => {
                                 id="credit_card"
                                 value="credit_card"
                                 {...register("payment_method")} />
-                            <label for="credit_card">
+                            <label htmlFor="credit_card">
                                 <img src={credit_card} alt="" />Credit Card
                             </label>
 
@@ -91,7 +91,7 @@ const A_Service = () => {
                                 id="paypal"
                                 value="paypal"
                                 {...register("payment_method")} />
-                            <label for="paypal">
+                            <label htmlFor="paypal">
                                 <img src={paypal} alt="" />Paypal
                             </label>
                         </div>

@@ -12,7 +12,7 @@ const Header = () => {
             </div>
 
             <input type="checkbox" id="check_box" />
-            <label class="check_box_label" for="check_box">
+            <label class="check_box_label" htmlFor="check_box">
                 <i class="fas fa-bars"></i>
             </label>
 

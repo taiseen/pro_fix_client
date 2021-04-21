@@ -11,7 +11,7 @@ const A_OrderList = () => {
     const [allRequestedService, setAllRequestedService] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    console.log(allRequestedService)
+    //console.log(allRequestedService)
 
     useEffect(() => {
         const url = `https://profixdb.herokuapp.com/allServiceRequest`;

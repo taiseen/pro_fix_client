@@ -126,7 +126,7 @@ const B_AddService = () => {
                         <div class="input_flex">
 
                             <label>Add Service Icon</label>
-                            <label for="file" class="inputFileLabel">
+                            <label htmlFor="file" class="inputFileLabel">
                                 <img src={uploadImg} alt="" /> Upload Icon
                             </label>
 

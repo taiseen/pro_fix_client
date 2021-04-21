@@ -11,17 +11,17 @@ const SingleService = ({ info }) => {
     const { serviceName , status } = info;
 
     let contextImg;
-    if( serviceName == ('Laptop')){
+    if( serviceName === ('Laptop')){
         contextImg = laptop;
-    } else if( serviceName == 'Motherboard'){
+    } else if( serviceName === 'Motherboard'){
         contextImg = motherboard;
-    } else if( serviceName == 'Soundcard'){
+    } else if( serviceName === 'Soundcard'){
         contextImg = soundCard;
-    } else if( serviceName == 'Powersupply'){
+    } else if( serviceName === 'Powersupply'){
         contextImg = powerSupply;
-    } else if( serviceName == 'Phone'){
+    } else if( serviceName === 'Phone'){
         contextImg = smartPhone;
-    } else if( serviceName == 'Mobile'){
+    } else if( serviceName === 'Mobile'){
         contextImg = smartPhone;
     }
 
