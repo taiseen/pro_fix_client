@@ -25,6 +25,7 @@ const A_OrderList = () => {
 
     }, []);
 
+    
 
     //##########################################################################################
     //##########################################################################################
@@ -70,10 +71,10 @@ const A_OrderList = () => {
                                                 <td>{serviceName}</td>
                                                 <td>{payment_method}</td>
                                                 <td>
-                                                    <select name="" id="options" value={status}>
-                                                        <option value={status} class="pending">Pending</option>
-                                                        <option value={status} class="on_going">On Going</option>
-                                                        <option value={status} class="done">Done</option>
+                                                    <select name="" id="options">
+                                                        <option class="pending">Pending</option>
+                                                        <option class="on_going">On Going</option>
+                                                        <option class="done">Done</option>
                                                     </select>
                                                 </td>
                                             </tr>

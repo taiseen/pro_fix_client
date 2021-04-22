@@ -62,3 +62,7 @@
 .service_card p {
     margin-bottom: .5em;
 }
+
+.displayNone{
+    display: none;
+}

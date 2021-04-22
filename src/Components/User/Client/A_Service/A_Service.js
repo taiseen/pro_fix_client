@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './A_Service.css';
 import ClientMenu from '../ClientMenu';
 import credit_card from '../../../../img/client/credit_card.png';
 import paypal from '../../../../img/client/paypal.png';
 import Header from '../../Header/Header';
 import { useForm } from "react-hook-form";
+import { UserContext } from '../../../../App';
 
 
-const A_Service = () => {
+const A_Service = ({ userClick }) => {
+
     document.title = 'Service';
+
+    console.log(userClick)
+
+    const [loginUser, setLoginUser] = useContext(UserContext);
+    const { name, email } = loginUser;
+    //const { serviceName, servicePrice } = userClick;
+
 
     const { register, handleSubmit } = useForm();
 
@@ -57,6 +66,7 @@ const A_Service = () => {
                         <input
                             required
                             type="text"
+                            value={name}
                             placeholder="Your Name"
                             class="user_input"
                             {...register("name")} />
@@ -64,16 +74,39 @@ const A_Service = () => {
                         <input
                             required
                             type="text"
+                            value={email}
                             placeholder="Your Email"
                             class="user_input"
                             {...register("email")} />
 
-                        <input
-                            required
-                            type="text"
-                            placeholder="Service Name"
-                            class="user_input"
-                            {...register("serviceName")} />
+                        <div className="service_options">
+
+                            <select class="user_input serviceName"
+                                {...register("serviceName")} >
+                                <option value='Mobile'>Mobile</option>
+                                <option value='Laptop'>Laptop</option>
+                                <option value='NIC Card'>Nic Card</option>
+                                <option value='Sound Card'>Sound Card</option>
+                                <option value='Motherboard'>Motherboard</option>
+                                <option value='Power Supply'>Power Supply</option>
+                            </select>
+
+                            {/* <input
+                                required
+                                type="text"
+                                // value={serviceName}
+                                placeholder="Service Name"
+                                class="user_input serviceName"
+                                {...register("serviceName")} /> */}
+
+                            <input
+                                required
+                                type="text"
+                                //value={servicePrice}
+                                placeholder="Service Price"
+                                class="user_input servicePrice"
+                                {...register("servicePrice")} />
+                        </div>
 
                         <p>Pay with</p>
                         <div class="payment_method">

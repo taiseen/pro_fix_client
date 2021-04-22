@@ -1,8 +1,11 @@
 .client_service_container {
+    width          : 98%;
+    
     display        : flex;
+    flex-wrap      : wrap;
     align-items    : flex-start;
     justify-content: flex-start;
-    flex-wrap      : wrap;
+
 }
 
 .service_box {
@@ -73,4 +76,3 @@
 .done:hover {
     box-shadow: 0 0 5px 0 #009444;
 }
-

@@ -72,3 +72,17 @@
 .fl_right {
     align-self: flex-end;
 }
+
+.service_options {
+    width          : 450px;
+    display        : flex;
+    justify-content: space-between;
+}
+
+.serviceName {
+    width: 280px;
+}
+
+.servicePrice {
+    width: 150px;
+}

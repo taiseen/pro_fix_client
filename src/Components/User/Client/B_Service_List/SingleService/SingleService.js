@@ -5,6 +5,7 @@ import motherboard from '../../../../../img/services/motherboard.png';
 import soundCard from '../../../../../img/services/sound-card.png';
 import powerSupply from '../../../../../img/services/power-supply.png';
 import smartPhone from '../../../../../img/services/smartphone.png';
+import nicCard from '../../../../../img/services/nic-card.png';
 
 const SingleService = ({ info }) => {
 
@@ -15,17 +16,17 @@ const SingleService = ({ info }) => {
         contextImg = laptop;
     } else if( serviceName === 'Motherboard'){
         contextImg = motherboard;
-    } else if( serviceName === 'Soundcard'){
+    } else if( serviceName === 'Sound Card'){
         contextImg = soundCard;
-    } else if( serviceName === 'Powersupply'){
+    } else if( serviceName === 'Power Supply'){
         contextImg = powerSupply;
-    } else if( serviceName === 'Phone'){
-        contextImg = smartPhone;
+    } else if( serviceName === 'NIC Card'){
+        contextImg = nicCard;
     } else if( serviceName === 'Mobile'){
         contextImg = smartPhone;
     }
 
-    console.log(contextImg);
+    //console.log(contextImg);
 
     return (
         <div class="service_box">
