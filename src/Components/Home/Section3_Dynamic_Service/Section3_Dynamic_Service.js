@@ -44,11 +44,11 @@ const Section3_Dynamic_Service = () => {
 
                         return (
 
-                            <Link to={`/client/service/${service._id}`} key={_id} >
+                            <Link to={`/client/service/${service._id}`} key={_id}  >
 
                                 {/* onClick={() => handleClick(service._id)} */}
 
-                                <div className="service_card">
+                                <div className="service_card info">
                                     <img src={iconURL} alt="" />
                                     <p>{serviceName}</p>
                                     <p className="service_price">${servicePrice}</p>
