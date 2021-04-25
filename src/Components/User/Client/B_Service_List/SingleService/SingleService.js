@@ -9,31 +9,42 @@ import nicCard from '../../../../../img/services/nic-card.png';
 
 const SingleService = ({ info }) => {
 
-    const { serviceName , status } = info;
+    const { serviceName, status } = info;
 
     let contextImg;
-    if( serviceName === ('Laptop')){
+    if (serviceName === ('Laptop')) {
         contextImg = laptop;
-    } else if( serviceName === 'Motherboard'){
+    } else if (serviceName === 'Motherboard') {
         contextImg = motherboard;
-    } else if( serviceName === 'Sound Card'){
+    } else if (serviceName === 'Sound Card') {
         contextImg = soundCard;
-    } else if( serviceName === 'Power Supply'){
+    } else if (serviceName === 'Power Supply') {
         contextImg = powerSupply;
-    } else if( serviceName === 'NIC Card'){
+    } else if (serviceName === 'NIC Card') {
         contextImg = nicCard;
-    } else if( serviceName === 'Mobile'){
+    } else if (serviceName === 'Mobile') {
         contextImg = smartPhone;
     }
 
     //console.log(contextImg);
+
+    let statusColor;
+
+    if (status === 'Done') {
+        statusColor = 'done';
+    } else if (status === 'Pending') {
+        statusColor = 'pending';
+    } else {
+        statusColor = 'on_going';
+    }
+    console.log(statusColor)
 
     return (
         <div class="service_box">
 
             <div class="service_status">
                 <img src={contextImg} alt="" />
-                <button class="status pending">{status}</button>
+                <button class={`status ${statusColor}`}>{status}</button>
             </div>
 
             <div class="service_info">

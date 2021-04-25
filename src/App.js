@@ -45,9 +45,6 @@ const App = () => {
                         <Login />
                     </Route>
 
-                    <Route path="/:">
-                    </Route>
-
                     {/* Admin Route ==> START */}
                     <PrivateRoute path="/admin/order_list">
                         <A_OrderList />
@@ -65,6 +62,9 @@ const App = () => {
 
                     {/* Client Route ==> START */}
                     <PrivateRoute path="/client/service">
+                        <A_Service />
+                    </PrivateRoute>
+                    <PrivateRoute path="/client/service/:serviceId">
                         <A_Service />
                     </PrivateRoute>
                     <PrivateRoute path="/client/service_list">

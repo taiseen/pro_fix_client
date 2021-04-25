@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './A_Service.css';
 import ClientMenu from '../ClientMenu';
 import credit_card from '../../../../img/client/credit_card.png';
@@ -6,17 +6,21 @@ import paypal from '../../../../img/client/paypal.png';
 import Header from '../../Header/Header';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../../../App';
+import { useParams } from 'react-router';
 
 
-const A_Service = ({ userClick }) => {
+const A_Service = () => {
 
     document.title = 'Service';
+    
+    const { serviceId } = useParams();
 
-    console.log(userClick)
+    console.log('Id send form that page - ', serviceId)
 
+
+    const [service, setService] = useState({});
     const [loginUser, setLoginUser] = useContext(UserContext);
     const { name, email } = loginUser;
-    //const { serviceName, servicePrice } = userClick;
 
 
     const { register, handleSubmit } = useForm();

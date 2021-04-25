@@ -14,6 +14,11 @@ const ClientMenu = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
 
+    const handleLogOut = () => {
+        setLoginUser({})
+        sessionStorage.clear('token');
+        console.log("admin logout")
+    }
 
     return (
 
@@ -42,10 +47,9 @@ const ClientMenu = () => {
                     <span>Review</span>
                 </Link>
 
-                <Link onClick={() => setLoginUser({})} to='/'>
+                <Link onClick={handleLogOut} >
                     <img src={logout} class="client_link_icon" alt="" />
                     <span>Logout</span>
-                    {/* <button onClick={() => setLoginUser({})} >Logout</button> */}
                 </Link>
 
             </nav>

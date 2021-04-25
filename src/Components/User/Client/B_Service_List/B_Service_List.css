@@ -1,6 +1,6 @@
 .client_service_container {
-    width          : 98%;
-    
+    width: 98%;
+
     display        : flex;
     flex-wrap      : wrap;
     align-items    : flex-start;
@@ -51,7 +51,7 @@
     cursor       : pointer;
     border       : 0;
     outline      : 0;
-    width        : 120px;
+    width        : 125px;
     padding      : .5em 1em;
     border-radius: 5px;
     font-size    : 1.2em;
@@ -75,4 +75,13 @@
 
 .done:hover {
     box-shadow: 0 0 5px 0 #009444;
+}
+
+.on_going {
+    background-color: #e9d4b0;
+    color           : #5e3602;
+}
+
+.on_going:hover {
+    box-shadow: 0 0 5px 0 #d89c2d;
 }

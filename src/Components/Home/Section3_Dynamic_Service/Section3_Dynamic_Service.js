@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import A_Service from '../../User/Client/A_Service/A_Service';
+import { Link, useHistory } from 'react-router-dom';
+
 import './Section3_Dynamic_Service.css';
 
 const Section3_Dynamic_Service = () => {
 
     const [allServices, setAllServices] = useState([]);
-    const [userClickService, setUserClickService] = useState({});
-
-    console.log(userClickService);
+    const history = useHistory();
 
     useEffect(() => {
         const url = `https://profixdb.herokuapp.com/allServices`;
@@ -20,11 +18,9 @@ const Section3_Dynamic_Service = () => {
             .catch(error => console.log(error))
     }, [])
 
-    const handleClick = (service) => {
-
-        //console.log(service);
-
-        setUserClickService(service);
+    const handleClick = (id) => {
+        // history.push(`/client/service/${id}`)
+        // console.log(`/client/service/${id}`)
     }
 
 
@@ -47,12 +43,19 @@ const Section3_Dynamic_Service = () => {
                         const { _id, iconURL, serviceName, servicePrice, serviceDescription } = service;
 
                         return (
-                            <div className="service_card" key={_id} onClick={() => handleClick(service)}>
-                                <img src={iconURL} alt="" />
-                                <p>{serviceName}</p>
-                                <p className="service_price">${servicePrice}</p>
-                                <p>{serviceDescription}</p>
-                            </div>
+
+                            <Link to={`/client/service/${service._id}`} key={_id} >
+
+                                {/* onClick={() => handleClick(service._id)} */}
+
+                                <div className="service_card">
+                                    <img src={iconURL} alt="" />
+                                    <p>{serviceName}</p>
+                                    <p className="service_price">${servicePrice}</p>
+                                    <p>{serviceDescription}</p>
+                                </div>
+                            </Link>
+
                         )
                     })
                 }
@@ -61,15 +64,6 @@ const Section3_Dynamic_Service = () => {
             <div>
                 <button>Explore More</button>
             </div>
-
-
-            <div className="displayNone">
-
-                <A_Service userClick={userClickService} />
-
-            </div>
-
-
 
         </section>
 

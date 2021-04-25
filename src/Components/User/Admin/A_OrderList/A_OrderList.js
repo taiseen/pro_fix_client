@@ -3,6 +3,7 @@ import './A_OrderList.css';
 import AdminMenu from '../AdminMenu';
 import Header from '../../Header/Header';
 import { Spinner } from 'react-bootstrap';
+import Service from './Service';
 
 
 const A_OrderList = () => {
@@ -25,7 +26,30 @@ const A_OrderList = () => {
 
     }, []);
 
-    
+    const handleStatus = (event) => {
+
+        const id_status = event.target.value;
+        const data = id_status.split(' ');
+
+        const id = data[0];
+        const status = data[1];
+
+        updateStatus(id, status);
+    }
+
+    const updateStatus = (id, status) => {
+        const url = `http://localhost:5000/update/${id}`;
+        fetch(url, {
+            method: 'PATCH',
+            body: JSON.stringify( { status } ),
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
+    }
+
+
 
     //##########################################################################################
     //##########################################################################################
@@ -61,25 +85,27 @@ const A_OrderList = () => {
                                     ? <Spinner animation="border" variant="danger" />
                                     : allRequestedService.map((service, index) => {
 
-                                        const { name, email, serviceName, payment_method, status } = service;
-
+                                        const { _id, name, email, serviceName, payment_method, status } = service;
+                                        console.log(status)
                                         return (
                                             <tr>
-                                                <td>{index+1}</td>
+                                                <td>{index + 1}</td>
                                                 <td>{name}</td>
                                                 <td>{email}</td>
                                                 <td>{serviceName}</td>
                                                 <td>{payment_method}</td>
                                                 <td>
-                                                    <select name="" id="options">
-                                                        <option class="pending">Pending</option>
-                                                        <option class="on_going">On Going</option>
-                                                        <option class="done">Done</option>
+                                                    <select name="serviceStatus" onChange={handleStatus}>
+                                                        <option class="pending" value={`${_id} Pending`}>Pending</option>
+                                                        <option class="on_going" value={`${_id} On-Going`}>On Going</option>
+                                                        <option class="done" value={`${_id} Done`}>Done</option>
                                                     </select>
                                                 </td>
                                             </tr>
                                         )
                                     })
+
+                                //: allRequestedService.map(service => <Service info={service} statusBtn={handleStatus}/>)
                             }
                         </tbody>
 

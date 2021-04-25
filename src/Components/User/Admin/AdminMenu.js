@@ -10,21 +10,19 @@ import logout from '../../../img/admin/logout.png';
 import { UserContext } from '../../../App';
 
 
+
 const AdminMenu = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
-
-    let history = useHistory();
-
+    
     const handleLogOut = () => {
-        sessionStorage.removeItem("token");
-        sessionStorage.clear("token");
-        history.push("/login");
-        // whichever component you want it to route to
+        setLoginUser({})
+        sessionStorage.clear('token');
+        console.log("admin logout")
     }
 
     return (
-
+        
         <header class="commonHeading">
 
             <div class="logo">
@@ -45,7 +43,6 @@ const AdminMenu = () => {
                     <span>Add Service</span>
                 </Link>
 
-
                 <Link to='/admin/make_admin'>
                     <img src={add_admin} class="admin_link_icon" alt="" />
                     <span>Make Admin</span>
@@ -56,8 +53,7 @@ const AdminMenu = () => {
                     <span>Manage Services</span>
                 </Link>
 
-                {/* onClick={handleLogOut} */}
-                <Link onClick={() => setLoginUser({})} to='/' >
+                <Link onClick={handleLogOut} >
                     <img src={logout} class="admin_link_icon" alt="" />
                     <span>Log-out</span>
                 </Link>
