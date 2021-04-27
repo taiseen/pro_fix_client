@@ -3,17 +3,13 @@ import './A_OrderList.css';
 import AdminMenu from '../AdminMenu';
 import Header from '../../Header/Header';
 import { Spinner } from 'react-bootstrap';
-import Service from './Service';
-
 
 const A_OrderList = () => {
     document.title = 'Order List';
 
     const [allRequestedService, setAllRequestedService] = useState([]);
     const [loading, setLoading] = useState(true);
-
-    //console.log(allRequestedService)
-
+    
     useEffect(() => {
         const url = `https://profixdb.herokuapp.com/allServiceRequest`;
         fetch(url)
@@ -38,7 +34,7 @@ const A_OrderList = () => {
     }
 
     const updateStatus = (id, status) => {
-        const url = `http://localhost:5000/update/${id}`;
+        const url = `https://profixdb.herokuapp.com/update/${id}`;
         fetch(url, {
             method: 'PATCH',
             body: JSON.stringify( { status } ),
@@ -104,15 +100,11 @@ const A_OrderList = () => {
                                             </tr>
                                         )
                                     })
-
-                                //: allRequestedService.map(service => <Service info={service} statusBtn={handleStatus}/>)
                             }
                         </tbody>
-
                     </table>
                 </section>
             </main>
-
         </div>
     );
 };

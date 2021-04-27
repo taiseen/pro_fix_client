@@ -43,6 +43,11 @@ const AdminMenu = () => {
                     <span>Add Service</span>
                 </Link>
 
+                <Link to='#' >
+                    <img src={add_service} class="admin_link_icon" alt="" />
+                    <span>Delete Service</span>
+                </Link>
+
                 <Link to='/admin/make_admin'>
                     <img src={add_admin} class="admin_link_icon" alt="" />
                     <span>Make Admin</span>
@@ -50,7 +55,7 @@ const AdminMenu = () => {
 
                 <Link to='/admin/manage_services'>
                     <img src={manage_service} class="admin_link_icon" alt="" />
-                    <span>Manage Services</span>
+                    <span>List of Users Service</span>
                 </Link>
 
                 <Link onClick={handleLogOut} >
