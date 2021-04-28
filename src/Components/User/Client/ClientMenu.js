@@ -17,7 +17,6 @@ const ClientMenu = () => {
     const handleLogOut = () => {
         setLoginUser({})
         sessionStorage.clear('token');
-        console.log("admin logout")
     }
 
     return (

@@ -3,6 +3,8 @@ import './A_OrderList.css';
 import AdminMenu from '../AdminMenu';
 import Header from '../../Header/Header';
 import { Spinner } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const A_OrderList = () => {
     document.title = 'Order List';
@@ -34,6 +36,7 @@ const A_OrderList = () => {
     }
 
     const updateStatus = (id, status) => {
+        
         const url = `https://profixdb.herokuapp.com/update/${id}`;
         fetch(url, {
             method: 'PATCH',
@@ -82,16 +85,16 @@ const A_OrderList = () => {
                                     : allRequestedService.map((service, index) => {
 
                                         const { _id, name, email, serviceName, payment_method, status } = service;
-                                        console.log(status)
+                                        
                                         return (
-                                            <tr>
+                                            <tr key={_id}>
                                                 <td>{index + 1}</td>
                                                 <td>{name}</td>
                                                 <td>{email}</td>
                                                 <td>{serviceName}</td>
                                                 <td>{payment_method}</td>
                                                 <td>
-                                                    <select name="serviceStatus" onChange={handleStatus}>
+                                                    <select name="serviceStatus" onChange={handleStatus} >
                                                         <option class="pending" value={`${_id} Pending`}>Pending</option>
                                                         <option class="on_going" value={`${_id} On-Going`}>On Going</option>
                                                         <option class="done" value={`${_id} Done`}>Done</option>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation, useParams } from 'react-router-dom';
 import './Login.css';
 import google from '../../img/google.png';
 import proFixLogo from '../../img/proFix.jpg';
@@ -8,6 +8,7 @@ import firebase from "firebase/app";
 import firebaseConfig from '../FireBase/FireBaseConfig';
 import "firebase/auth";
 import { UserContext } from '../../App';
+
 
 
 //############################################################
@@ -24,14 +25,12 @@ const Login = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
 
-    console.log(loginUser);
-
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
 
-    
-
+    const { role } = useParams();
+    console.log(role);
 
     const storeUserToken = () => {
         firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
@@ -41,9 +40,8 @@ const Login = () => {
         });
     }
 
-
     const handleLogin = () => {
-        console.log("login click");
+
 
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './A_Service.css';
 import ClientMenu from '../ClientMenu';
 import credit_card from '../../../../img/client/credit_card.png';
-import paypal from '../../../../img/client/paypal.png';
+import payPal from '../../../../img/client/payPal.png';
 import Header from '../../Header/Header';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../../../App';
@@ -125,11 +125,11 @@ const A_Service = () => {
 
                             <input
                                 type="radio"
-                                id="paypal"
-                                value="paypal"
+                                id="payPal"
+                                value="payPal"
                                 {...register("payment_method")} />
-                            <label htmlFor="paypal">
-                                <img src={paypal} alt="" />Paypal
+                            <label htmlFor="payPal">
+                                <img src={payPal} alt="" />Paypal
                             </label>
                         </div>
 

@@ -6,6 +6,16 @@ const PrivateRoute = ({ children, ...rest }) => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
 
+    const urlPathName = children.type.name;
+
+    let role;
+    if (urlPathName === 'A_OrderList') {
+        role = 'admin';
+    } else {
+        role = 'client';
+    }
+
+
     return (
         <Route
             {...rest}
@@ -15,7 +25,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                 ) : (
                     <Redirect
                         to={{
-                            pathname: "/login",
+                            pathname: `/login/${role}`,
                             state: { from: location }
                         }}
                     />

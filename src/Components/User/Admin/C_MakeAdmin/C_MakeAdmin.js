@@ -26,7 +26,6 @@ const C_MakeAdmin = () => {
                 .then(result => {
                     if (result) {
                         alert('Admin Added Successfully...');
-
                     }
                 })
                 .catch(err => console.log(err));
@@ -35,7 +34,6 @@ const C_MakeAdmin = () => {
         // clear input values from input field...
         e.target.reset();
     }
-
 
 
     //##########################################################################################
@@ -73,11 +71,9 @@ const C_MakeAdmin = () => {
                             </div>
                         </form>
 
-
                     </div>
                 </section>
             </main>
-
         </div>
     );
 };

@@ -6,23 +6,23 @@ import checklist from '../../../img/admin/checklist.png';
 import add_service from '../../../img/admin/plus.png';
 import add_admin from '../../../img/admin/add_admin.png';
 import manage_service from '../../../img/admin/edit.png';
+import delete_service from '../../../img/admin/delete_service.png';
 import logout from '../../../img/admin/logout.png';
 import { UserContext } from '../../../App';
-
 
 
 const AdminMenu = () => {
 
     const [loginUser, setLoginUser] = useContext(UserContext);
-    
+
     const handleLogOut = () => {
         setLoginUser({})
         sessionStorage.clear('token');
-        console.log("admin logout")
     }
 
+
     return (
-        
+
         <header class="commonHeading">
 
             <div class="logo">
@@ -41,10 +41,11 @@ const AdminMenu = () => {
                 <Link to='/admin/add_service' >
                     <img src={add_service} class="admin_link_icon" alt="" />
                     <span>Add Service</span>
+
                 </Link>
 
                 <Link to='#' >
-                    <img src={add_service} class="admin_link_icon" alt="" />
+                    <img src={delete_service} class="admin_link_icon" alt="" />
                     <span>Delete Service</span>
                 </Link>
 

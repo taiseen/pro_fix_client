@@ -14,8 +14,6 @@ const B_Service_List = () => {
     const [requestedService, setRequestedService] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    console.log(requestedService)
-
     useEffect(() => {
         const url = `https://profixdb.herokuapp.com/yourServiceList?email=${loginUser.email}`;
         fetch(url)
@@ -49,7 +47,7 @@ const B_Service_List = () => {
                             null
                     }
                     {
-                        requestedService.map(service => <SingleService info={service} />)
+                        requestedService.map(service => <SingleService info={service} key={service._id} />)
                     }
                 </section>
 

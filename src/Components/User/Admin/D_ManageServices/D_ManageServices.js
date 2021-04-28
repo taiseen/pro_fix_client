@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../A_OrderList/A_OrderList.css';
 import AdminMenu from '../AdminMenu';
 import Header from '../../Header/Header';
-
 import deleteImg from '../../../../img/admin/delete.png';
 import { Spinner } from 'react-bootstrap';
 
@@ -73,7 +72,6 @@ const D_ManageServices = () => {
                         </thead>
 
                         <tbody>
-
                             {
                                 loading
                                     ? <Spinner animation="border" variant="danger" />
@@ -91,9 +89,7 @@ const D_ManageServices = () => {
                                         </tr>;
                                     })
                             }
-
                         </tbody>
-
                     </table>
                 </section>
             </main>

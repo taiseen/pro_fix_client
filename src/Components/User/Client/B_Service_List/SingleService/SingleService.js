@@ -26,10 +26,8 @@ const SingleService = ({ info }) => {
         contextImg = smartPhone;
     }
 
-    //console.log(contextImg);
 
     let statusColor;
-
     if (status === 'Done') {
         statusColor = 'done';
     } else if (status === 'Pending') {
@@ -37,7 +35,6 @@ const SingleService = ({ info }) => {
     } else {
         statusColor = 'on_going';
     }
-    console.log(statusColor)
 
     return (
         <div class="service_box">

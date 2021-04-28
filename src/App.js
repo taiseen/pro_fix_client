@@ -15,18 +15,11 @@ import A_Service from './Components/User/Client/A_Service/A_Service';
 import B_Service_List from './Components/User/Client/B_Service_List/B_Service_List';
 import C_Review from './Components/User/Client/C_Review/C_Review';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-
-
-// 11-March-2021
-// after finish ==>> attach output-ui
-// Last focus on README file...
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export const UserContext = createContext({});
+
+// https://profixdb.web.app 
 
 const App = () => {
 
@@ -41,7 +34,7 @@ const App = () => {
                         <Home />
                     </Route>
 
-                    <Route path="/login">
+                    <Route path="/login/:role">
                         <Login />
                     </Route>
 
