@@ -12,17 +12,10 @@ const PrivateRoute = ({ children, ...rest }) => {
     // in local host its works ok |
     // but after firebase hosting... link name weirdly change
 
-    // let role; 
-    // if (urlPathName === 'A_OrderList') {
-    //     role = 'admin';
-    // } else {
-    //     role = 'client';
-    // }
-
     let role;
-    if (urlPathName === '') {
+    if (urlPathName === '' || urlPathName === 'A_OrderList') {
         role = 'admin';
-    } else if (urlPathName === 'V') {
+    } else if (urlPathName === 'V' || urlPathName === 'A_Service') {
         role = 'client';
     }
 

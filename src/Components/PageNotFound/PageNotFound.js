@@ -1,17 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './PageNotFound.css';
 
 const PageNotFound = () => {
-    
-    const demo = {
-        margin: '0 auto',
-        textAlign: 'center',
-    }
 
     return (
-        <div style={demo}>
+        <div className="error_info_container">
             <h1>404 | Page Not Found</h1>
+            <Link to='/home'>Click Me - For Go To Home Page</Link>
         </div>
     );
+
 };
 
 export default PageNotFound;
