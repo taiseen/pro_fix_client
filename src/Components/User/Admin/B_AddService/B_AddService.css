@@ -87,6 +87,11 @@
     justify-content: center;
 }
 
+input,
+textarea {
+    caret-color: red;
+}
+
 input::placeholder,
 textarea::placeholder {
     color: var(--mainColor);
